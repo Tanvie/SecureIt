@@ -3,24 +3,33 @@ package com.example.secureit
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     @SuppressLint("ResourceType")
     lateinit var haSpinnerFunct: Spinner
     lateinit var tvHashFunct: TextView
+    lateinit var haEtTextInput: EditText
+    lateinit var haButtonEncrypt: Button
+    lateinit var selectedFunct: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tvHashFunct = findViewById(R.id.tvHashFunct)
+        tvHashFunct = findViewById(R.id.haTvHashFunct)
         haSpinnerFunct = findViewById(R.id.haSpinnerFunct)
+        haEtTextInput = findViewById(R.id.haEtTextInput)
+        haButtonEncrypt = findViewById(R.id.haButtonEncrypt)
 
-        
+
+        haButtonEncrypt.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View?) {
+                tvHashFunct.text = selectedFunct
+            }
+        }
+        )
+
         val adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.hashingFunctions,
@@ -36,7 +45,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val text: String = parent?.getItemAtPosition(position).toString()
-        tvHashFunct.text = text
+        selectedFunct = parent?.getItemAtPosition(position).toString()
+
+
     }
 }
