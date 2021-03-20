@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SecureIt</string>
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="hashingFunctions">
+        <item>MD5</item>
+        <item>SHA-1</item>
+        <item>SHA-224</item>
+        <item>SHA-256</item>
+        <item>SHA-384</item>
+        <item>SHA-512</item>
+    </string-array>
 </resources>
