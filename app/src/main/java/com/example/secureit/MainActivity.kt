@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 val bytes = MessageDigest.getInstance(selectedFunct).digest(inputString.toByteArray())
                 haTvEncryptText.text = toHex(bytes)
 
+                
             }
         }
         )
