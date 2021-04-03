@@ -47,4 +47,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/haEtTextInput" />
+
+    <TextView
+        android:id="@+id/haTvEncryptText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Encrypted Text Here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/haButtonEncrypt"
+        tools:text="Encrypted Text Here" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
