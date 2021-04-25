@@ -1,64 +1,30 @@
 package com.example.secureit
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.View
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import java.security.MessageDigest
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
-    @SuppressLint("ResourceType")
-    lateinit var haSpinnerFunct: Spinner
-    lateinit var tvHashFunct: TextView
-    lateinit var haEtTextInput: EditText
-    lateinit var haButtonEncrypt: Button
-    lateinit var selectedFunct: String
-    lateinit var inputString: String
-    lateinit var haTvEncryptText: TextView
+class MainActivity : AppCompatActivity() {
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_SecureIt)
         setContentView(R.layout.activity_main)
 
-        tvHashFunct = findViewById(R.id.haTvHashFunct)
-        haSpinnerFunct = findViewById(R.id.haSpinnerFunct)
-        haEtTextInput = findViewById(R.id.haEtTextInput)
-        haButtonEncrypt = findViewById(R.id.haButtonEncrypt)
-        haTvEncryptText = findViewById(R.id.haTvEncryptText)
+        setFullscreen()
 
-
-        haButtonEncrypt.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                tvHashFunct.text = selectedFunct
-                inputString = haEtTextInput.text.toString()
-
-                val bytes = MessageDigest.getInstance(selectedFunct).digest(inputString.toByteArray())
-                haTvEncryptText.text = toHex(bytes)
-
-                
-            }
-        }
-        )
-
-        val adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.hashingFunctions,
-                android.R.layout.simple_spinner_item
-        )
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        haSpinnerFunct.adapter = adapter
-        haSpinnerFunct.onItemSelectedListener = this
+        navController = findNavController(R.id.fragment)
+        setupActionBarWithNavController(navController)
     }
 
-    private fun toHex(byteArray: ByteArray): String {
-        return byteArray.joinToString("") { "%02x".format(it) }
+    private fun setFullscreen() {
+        hideActionBar()
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        selectedFunct = parent?.getItemAtPosition(position).toString()
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
