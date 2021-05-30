@@ -1,6 +1,5 @@
 package com.example.secureit
 
-
 import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
