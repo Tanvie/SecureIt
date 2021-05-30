@@ -3,6 +3,7 @@ package com.example.secureit
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,9 +23,7 @@ class SuccessFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentSuccessBinding.inflate(inflater, container, false)
 
@@ -33,9 +32,17 @@ class SuccessFragment : Fragment() {
         binding.copyButton.setOnClickListener {
             onCopyClicked()
         }
-        return binding.root
 
+        binding.shareButton.setOnClickListener {
+            val intent= Intent()
+            intent.action= Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,"*Be Secure with Tanvi Wakade's Secure It* \n\n\n\n"+ args.hash)
+            intent.type="text/plain"
+            startActivity(Intent.createChooser(intent,"Share To:"))
+        }
+        return binding.root
     }
+
 
     private fun onCopyClicked() {
         lifecycleScope.launch {
@@ -51,6 +58,7 @@ class SuccessFragment : Fragment() {
         clipboardManager.setPrimaryClip(clipData)
 
     }
+
 
     private suspend fun applyAnimation() {
         binding.include.messageBackground.animate().translationY(80f).duration = 200L
