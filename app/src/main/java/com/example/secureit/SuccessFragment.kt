@@ -32,7 +32,6 @@ class SuccessFragment : Fragment() {
         binding.copyButton.setOnClickListener {
             onCopyClicked()
         }
-
         binding.shareButton.setOnClickListener {
             val intent= Intent()
             intent.action= Intent.ACTION_SEND
