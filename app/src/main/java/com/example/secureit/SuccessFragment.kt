@@ -41,8 +41,7 @@ class SuccessFragment : Fragment() {
         }
         return binding.root
     }
-
-
+    
     private fun onCopyClicked() {
         lifecycleScope.launch {
             copyToClipboard(args.hash)
