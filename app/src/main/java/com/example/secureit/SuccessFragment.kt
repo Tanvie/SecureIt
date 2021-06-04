@@ -23,7 +23,8 @@ class SuccessFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentSuccessBinding.inflate(inflater, container, false)
 
@@ -33,11 +34,11 @@ class SuccessFragment : Fragment() {
             onCopyClicked()
         }
         binding.shareButton.setOnClickListener {
-            val intent= Intent()
-            intent.action= Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT,"*Be Secure with Tanvi Wakade's Secure It* \n\n\n\n"+ args.hash)
-            intent.type="text/plain"
-            startActivity(Intent.createChooser(intent,"Share To:"))
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, "*Be Secure Secure It* \n\n\n\n" + args.hash)
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Share To:"))
         }
         return binding.root
     }
