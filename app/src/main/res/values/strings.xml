@@ -3,9 +3,13 @@
     <string name="selected_item">Selected item:</string>
 
     <string-array name="hash_algorithm">
-        <item>SHA-256</item>
-        <item>SHA-512</item>
         <item>MD5</item>
+        <item>SHA-1</item>
+        <item>SHA-224</item>
+        <item>SHA-256</item>
+        <item>SHA-384</item>
+        <item>SHA-512</item>
+
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
