@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="encrypted_text">Encrypted Text</string>
+    <string name="share">Share</string>
+    <string name="copy">Copy</string>
+    <string name="text">Text</string>
+    <string name="be_secure_with_secure_it">Be Secure with Secure It</string>
+    <string name="made_by_tanvi_wakade">Made by Tanvi Wakade</string>
+</resources>

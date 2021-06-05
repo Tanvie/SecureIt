@@ -17,7 +17,7 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="60dp"
         android:width="0dp"
-        android:text="Secure It"
+        android:text="@string/secure_it"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="50sp"
@@ -47,7 +47,7 @@
             android:id="@+id/autoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Select The Type of Algorithm"
+            android:hint="@string/select_the_type_of_algorithm"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:textStyle="bold" />
@@ -61,7 +61,7 @@
         android:background="@color/dark_blue"
         android:ems="10"
         android:gravity="start"
-        android:hint="Text Here...."
+        android:autofillHints=""
         android:inputType="textMultiLine"
         android:lines="6"
         android:maxLines="6"
@@ -70,6 +70,7 @@
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        android:hint="@string/text_here"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <Button
@@ -80,7 +81,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/blue"
-        android:text="Generate"
+        android:text="@string/generate"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

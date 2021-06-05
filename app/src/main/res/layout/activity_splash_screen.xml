@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Be Secure with Secure It"
+            android:text="@string/be_secure_with_secure_it"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/white"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20sp"
-        android:text="Made by Tanvi Wakade"
+        android:text="@string/made_by_tanvi_wakade"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"

@@ -36,7 +36,7 @@ class SuccessFragment : Fragment() {
         binding.shareButton.setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT, "*Be Secure With Secure It* \n\n\n" + args.hash)
+            intent.putExtra(Intent.EXTRA_TEXT, "Be Secure With Secure It \n\n\n" + args.hash)
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, "Share To:"))
         }
